@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "primal-log"
+version = "1.0.0"
+description = "Generate changelogs from conventional Git commits"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+keywords = ["cli","developer-tools"]
+
+[project.scripts]
+primal-log = "primal_log.cli:main"
+
+[tool.setuptools]
+packages = ["primal_log"]
