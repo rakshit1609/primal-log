@@ -1,7 +1,13 @@
+import sys
 import argparse
 from .main import generate_changelog, get_git_commits
 
 def main():
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(errors="replace")
+        except Exception:
+            pass
     p = argparse.ArgumentParser(description="Primal-Log: changelog from conventional commits")
     p.add_argument("--repo", help="Path to git repo (default: cwd)")
     p.add_argument("--output", help="Output file path")
